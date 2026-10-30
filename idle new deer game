@@ -9,7 +9,7 @@ import sys
 # -----------------------------
 pygame.init()
 
-
+print('dear io want to play')
 
 
 # -----------------------------
@@ -83,7 +83,11 @@ kick_damage = 1.5
 # -----------------------------
 # Projectiles
 # -----------------------------
-projectiles = []
+projectiles = [
+
+    ]
+
+
 
 
 
@@ -813,13 +817,14 @@ while running:
         # Cooldowns
         # -------------------------
         if enemy_shoot_cooldown > 0:
-            enemy_shoot_cooldown -= 1
+            enemy_shoot_cooldown -= .75
+            
 
 
 
 
         if attack_cooldown > 0:
-            attack_cooldown -= 1
+            attack_cooldown -= 90
 
 
 
@@ -997,7 +1002,7 @@ while running:
 
         pygame.draw.rect(
             screen,
-            (180, 40, 40),
+            (255, 115, 51, 255),
             (
                 rect.x - camera_x,
                 rect.y - camera_y,
@@ -1057,7 +1062,7 @@ while running:
 
         pygame.draw.circle(
             screen,
-            (255, 255, 0),
+            (220, 115, 51, 255),
             (
                 int(
                     projectile["x"]
@@ -1079,7 +1084,7 @@ while running:
     # -----------------------------
     pygame.draw.rect(
         screen,
-        (40, 80, 220),
+        (120, 115, 51, 255),
         (
             player_x - camera_x,
             player_y - camera_y,
@@ -1119,7 +1124,7 @@ while running:
 
     pygame.draw.line(
         screen,
-        (255, 255, 255),
+        (120, 115, 51, 150),
         (
             player_center_x,
             player_center_y
@@ -1253,7 +1258,7 @@ while running:
 
 
         sub_text = font.render(
-            "You defeated all the enemies!",
+            "You defeated all the hunters!",
             True,
             (255, 255, 255)
         )
